@@ -1,0 +1,31 @@
+Executable validation tool
+
+exval checks that specified commands exist in PATH and can be executed.
+
+Example:
+~~~bash
+$ exval gcc
+checking gcc ... OK
+
+$ exval install tar gzip ar clang
+checking install ... OK
+checking tar ... OK
+checking gzip ... OK
+checking ar ... OK
+checking clang ... OK
+~~~
+
+exval retruns '0' on success. It can be used in scripts that check commands before running them. Example:
+~~~bash
+if exval -f install; then
+  install ...
+else
+  exit 1
+fi
+~~~
+
+exval have the followig options:
+  -n    disable printing any status
+  -f    print status only on fail
+  ...   any other options are treated as commands to check
+
