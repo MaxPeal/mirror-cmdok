@@ -76,7 +76,7 @@ EOF
 
 print_version() {
   cat <<EOF
-cmdok 1.0
+cmdok 1.0.1
 Copyright (C) 2016-2017 Oleksii Cherniavskyi
 EOF
 }
