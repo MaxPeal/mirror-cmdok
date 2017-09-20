@@ -1,10 +1,14 @@
 Command validation tool
 
-cmdok checks that specified commands are OK. If command is OK than it exists in PATH and can be run. 
+### Description
+
+**cmdok** checks that specified commands are OK. If command is OK than it exists in PATH and can be run. 
 It is a simple, small and portable Bash script. It is useful in software packages that want to check that some commands exist before trying to run them.
 
-Example:
-~~~bash
+
+### Example
+
+~~bash
 $ cmdok gcc
 checking gcc ... OK
 
@@ -14,19 +18,27 @@ checking tar ... OK
 checking gzip ... OK
 checking ar ... OK
 checking clang ... OK
-~~~
+~~
 
-cmdok retruns '0' on success. It can be used in scripts that check commands before running them. Example:
-~~~bash
+**cmdok** retruns '0' on success. It can be used in scripts that check commands before running them. Example:
+~~bash
 if cmdok -f install; then
   install ...
 else
   exit 1
 fi
-~~~
+~~
 
-cmdok have the followig options:
-  -n    disable printing any status
-  -f    print status only on fail
-  ...   any other options are treated as commands to check
+
+### Usage
+
+~~
+cmdok [OPTIONS] <command>..
+
+Options:
+  -n             disable printing any status
+  -f             print status only on fail
+  -v             display version information and exit
+  <command>..    commands to check
+~~
 
