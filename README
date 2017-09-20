@@ -1,6 +1,6 @@
 Command validation tool
 
-cmdok checks that specified commands are OK
+cmdok checks that specified commands are OK. If command is OK than it exists in PATH and can be run. cmdok script is very small size and portable. It is useful in software packages that want to check that some commands exist before trying to run them.
 
 Example:
 ~~~bash
